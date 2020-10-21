@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
+import { ContentTypePipePipe } from './content-type-pipe.pipe';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ContentListComponent } from './content-list/content-list.component';
     AppComponent,
     ContentCardComponent,
     ContentListComponent,
+    ContentTypePipePipe,
   ],
   imports: [
     BrowserModule
