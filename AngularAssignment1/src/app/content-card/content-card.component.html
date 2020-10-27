@@ -1,1 +1,14 @@
-<p>content-card works!</p>
+
+
+
+<ng-template #default><img src="https://i.stack.imgur.com/l60Hf.png"></ng-template>
+
+<div class="content-{{ content.id }}">
+  <div *ngIf='content.imageUrl; else default'>
+    {{content.imageUrl}}
+  </div>
+  <h1 appHoverStyle class="title">Title: {{ content.title }}</h1>
+  <div class="Author">Name: {{content.author}}</div>
+<div class="body">Body: {{content.body}}</div></div>
+<div class="tags">Tags:</div>
+<p appHoverStyle class="tag" *ngFor="let tag in content.tags">{{tag}}</p>
