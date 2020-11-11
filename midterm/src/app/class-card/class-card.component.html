@@ -1,0 +1,7 @@
+<ng-template #default>N/A</ng-template>
+<div class="name">Course Code: {{course.courseCode}}</div>
+<div class="Season">{{course.semSeason}}</div>
+<div class="teacherName">{{course.TeacherName}}</div>
+<div *ngIf='course.rating; else default'>
+  Popularity: {{course.rating}}
+</div>

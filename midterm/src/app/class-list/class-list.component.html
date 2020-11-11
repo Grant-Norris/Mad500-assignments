@@ -1,0 +1,10 @@
+<input type="text" id="coarseCode" name="course code">
+<input type="text" id="season" name="semester season">
+<input type="text" id="teacher" name="teacher name">
+<input type="text" id="rating" name="rating?">
+<button (click)="add()">add this class</button>
+
+<app-content-card id="list1" *ngFor="let item of courseList; index as i; last as isLast"
+                  [content] ="item" class="class-Card-{{i}}" [class.is-last]="isLast">
+</app-content-card>\
+

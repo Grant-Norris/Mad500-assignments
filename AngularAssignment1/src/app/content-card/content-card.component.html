@@ -5,7 +5,7 @@
 
 <div class="content-{{ content.id }}">
   <div *ngIf='content.imageUrl; else default'>
-    {{content.imageUrl}}
+    <img src="{{content.imageUrl}}">
   </div>
   <h1 appHoverStyle class="title">Title: {{ content.title }}</h1>
   <div class="Author">Name: {{content.author}}</div>
