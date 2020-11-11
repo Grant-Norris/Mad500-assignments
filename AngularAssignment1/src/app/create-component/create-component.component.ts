@@ -26,9 +26,24 @@ export class CreateComponentComponent implements OnInit {
     this.newPersonEvent.emit(this.newContent);
   }
   addContent(): void{
-    this.newContent.id = +this.newContent.id;
-    this.newPersonEvent.emit(this.newContent);
-    console.log('Event Emitted!', this.newContent.title);
+    const ourPromise = new Promise((success, fail) => {
+      let test = true;
+      if (this.newContent.title === '' || this.newContent.author === '' || this.newContent.body === ''){
+        test = false;
+      }
+      if (test){
+        success('It worked!');
+        this.newContent.id = +this.newContent.id;
+        this.newPersonEvent.emit(this.newContent);
+        console.log('Event Emitted!', this.newContent.title);
+      }
+      else{
+        fail('it failed');
+      }
+    });
+    ourPromise.then((successResult: string) => {
+      console.log('Success! ', successResult);
+    }).catch((failResult: string) => console.log('Failure!: ', failResult));
   }
 
 }
