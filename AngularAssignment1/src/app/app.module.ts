@@ -8,10 +8,11 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypePipePipe } from './content-type-pipe.pipe';
 import { HoverStyleDirective } from './hover-style.directive';
 import { MessagesComponent } from './messages/messages.component';
-import { CreateComponentComponent } from './create-component/create-component.component';
+import { CreateComponentComponent, CreateComponentDialog} from './create-component/create-component.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,11 @@ import {HttpClientModule} from '@angular/common/http';
     HoverStyleDirective,
     MessagesComponent,
     CreateComponentComponent,
+    CreateComponentDialog,
   ],
   imports: [
+      MatButtonModule,
+      MatInputModule,
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
@@ -34,6 +38,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule
   ],
   providers: [],
+  entryComponents: [CreateComponentDialog],
   bootstrap: [AppComponent]
 })
 
